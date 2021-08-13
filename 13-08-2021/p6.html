@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>JavaScript to find Odd or Even number Example - Tutorialsmade.com!</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+          // program to check leap year
+function checkLeapYear(year) {
+
+const leap = new Date(year, 1, 29).getDate() === 29;
+if (leap) {
+    document.write(year + ' is a leap year');
+} else {
+    document.write(year + ' is not a leap year');
+}
+}
+
+// take input
+const year = prompt('Enter a year:');
+
+checkLeapYear(year);
+
+
+                  
+        </script>
+   </head>
+    </body>
+</html>
