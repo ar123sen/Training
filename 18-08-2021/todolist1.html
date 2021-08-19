@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+</head>
+<body>
+<input id="task"><button id="add">Add</button>
+<hr>
+<div id="todos"></div>
+
+<script > function get_todos() {
+    var todos = new Array;
+    var todos_str = localStorage.getItem('todo');
+    if (todos_str !== null) {
+        todos = JSON.parse(todos_str); 
+    }
+    return todos;
+}function add() {
+    var task = document.getElementById('task').value;
+ 
+    var todos = get_todos();
+    todos.push(task);
+    localStorage.setItem('todo', JSON.stringify(todos));
+ 
+    show();
+ 
+    return false;
+}function remove() {
+    var id = this.getAttribute('id');
+    var todos = get_todos();
+    todos.splice(id, 1);
+    localStorage.setItem('todo', JSON.stringify(todos));
+ 
+    show();
+ 
+    return false;
+}function show() {
+    var todos = get_todos();
+ 
+    var abc = '<ul>';
+    for(var i=0; i<todos.length; i++) {
+        abc += '<li>' + todos[i] + '<button class="remove" id="' + i  + '">x</button></li>';
+    };
+    abc += '</ul>';
+ 
+    document.getElementById('todos').innerHTML = abc;
+ 
+    var buttons = document.getElementsByClassName('remove');
+    for (var i=0; i < buttons.length; i++) {
+        buttons[i].addEventListener('click', remove);
+    };
+}
+ 
+document.getElementById('add').addEventListener('click', add);
+show();</script>
+</body>
+</html>
+
+
+
