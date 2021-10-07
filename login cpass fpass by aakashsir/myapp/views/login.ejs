@@ -1,0 +1,29 @@
+<html>
+<body>
+    <%- include('header'); -%>
+    <form method="post">
+        <h1>Login</h1>
+        <table>
+            
+            
+            <tr>
+                <td>Email</td>
+                <td><input type="text" placeholder="Enter Email" name="user_email" required></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input type="text" placeholder="Enter Password" name="user_password" required></td>
+            </tr>
+
+             
+            <tr>
+                <td><input type="submit"></td>
+                <td><input type="reset"></td>
+            </tr>
+        </table>
+        <a href="/signup">Create an Account?</a>
+        <a href="/forgot-password">Forgot Password?</a>
+    </form>
+</body>
+
+</html>

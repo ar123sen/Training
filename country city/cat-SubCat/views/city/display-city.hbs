@@ -1,0 +1,20 @@
+<table border="1">
+    <tr>
+       
+        <td>City Name</td>
+        <td>State Name</td>
+        <td>Country Name</td>
+        <td>Action</td>
+    </tr>
+    {{#each mydata}}
+    <tr>
+        <td>{{city_name}}</td>
+        <td>{{_state.state_name}}</td>
+        <td>{{_country.country_name}}</td>
+        <td>
+            <a href="/city/edit">Edit</a>
+            <a href="/city/delete">Delete</a>
+        </td>
+    </tr>
+    {{/each}}
+</table>

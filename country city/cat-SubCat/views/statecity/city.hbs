@@ -1,0 +1,43 @@
+<html>
+<body>
+
+    <form method="post" action="/city-process">
+        <h1>Add City</h1>
+        <table>
+            <tr>
+                <td>City</td>
+                <td> <input type="text" placeholder="Enter City" name="cty"></td>
+            </tr>
+            <tr>
+                <td>State</td>
+                <td> 
+                    <select name="_states">
+                   {{#each mydata}}
+                        
+                            <option value='{{_id}}'>{{state_name}}</option>
+                           
+                           {{/each}}
+                        </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Country</td>
+                <td> 
+                    <select name="_category">
+                   {{#each mycountry}}
+                        
+                            <option value='{{_id}}'>{{country_name}}</option>
+                           
+                           {{/each}}
+                        </select>
+                </td>
+            </tr>
+           
+            <tr>
+                <td><input type="submit"></td>
+                <td><input type="reset"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

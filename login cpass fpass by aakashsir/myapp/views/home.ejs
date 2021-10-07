@@ -1,0 +1,12 @@
+ 
+<% if(myemail){ %>
+
+    <h1> Hi, <%= myemail %> 
+        <a href="/change-password">Change Password</a> 
+        <a href="/logout">Logout</a> </h1>
+  
+    <% } else{ %>  
+    <h1><a href="/login">Login</a></h1>
+ <% } %>
+
+ 

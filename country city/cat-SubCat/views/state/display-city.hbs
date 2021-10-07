@@ -1,0 +1,49 @@
+<html>
+    <head>
+    <style>
+        table 
+        {
+            counter-reset: tableCount;
+        }
+        .counterCell:before 
+        {
+            content: counter(tableCount); 
+            counter-increment: tableCount; 
+        }
+    </style>
+    <script>
+        function ConfirmDelete()
+        {
+            var x = confirm("Are you sure you want to delete?");
+            if (x)
+                return true;
+            else
+                return false;
+        }
+    </script>
+    </head>
+<body>
+    <h1>Display State</h1>
+    <table border='1'>
+        <tr>
+            <th>ID</th>
+            <th>State_name</th>
+            <th>Action</th>
+        </tr>
+            {{#each user_array}}
+        <tr>
+           <td class="counterCell"></td>
+            <td>{{state_name}}</td>
+           
+            <td>
+                    <a href='/state/edit/{{_id}}'>Edit</a> | 
+                    <a href='/state/delete/{{_id}}' Onclick="ConfirmDelete()">Delete</a> |
+          </td>
+        </tr>
+         {{else}}
+        No Record Found
+        
+    </table>
+  {{/each}}
+</body>
+</html>

@@ -1,0 +1,26 @@
+<html>
+<body>
+    <form method="post">
+        <h1>Add Country</h1>
+        <table>
+            <tr>
+                <td>Country Name</td>
+                <td> <input type="text" placeholder="Enter Country Name" name="country_name"></td>
+            </tr>
+           
+            <tr>
+                <td>Countries</td>
+                <td><select class="form-control" name="countries">
+                            {{#each user_array}}
+                       <option value="{{_id}}">{{country_name}}</option>
+                        {{/each}}
+                    </select></td>
+            </tr>
+            <tr>
+                <td><input type="submit"></td>
+                <td><input type="reset"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <style>
+            table 
+            {
+                counter-reset: tableCount;
+            }
+            .counterCell:before 
+            {
+                content: counter(tableCount); 
+                counter-increment: tableCount; 
+            }
+        </style>
+    </head>
+<body>
+   
+    <h1>Display Country</h1>
+    <table border='1' cellpadding="5" cellspacing="0">
+        <tr>
+            <th>Id</th>
+            <th>Country Name</th>
+            <th>Action</th>
+        </tr>
+
+            {{#each user_array}}
+        <tr>
+           <td class="counterCell"></td>
+            <td>{{country_name}}</td>
+            <td>
+                    <a href='/edit/{{_id}}'>Edit</a> | 
+                    <a href='/delete/{{_id}}'>Delete</a> 
+          </td>
+        </tr>
+        {{else}}
+        No Record Found
+       
+    </table>
+    
+    {{/each}}
+</body>
+</html>

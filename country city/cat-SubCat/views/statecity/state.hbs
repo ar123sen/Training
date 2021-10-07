@@ -1,0 +1,31 @@
+<html>
+<body>
+
+    <form method="post" action="/state-process">
+        <h1>Add State</h1>
+        <table>
+            <tr>
+                <td>State</td>
+                <td> <input type="text" placeholder="Enter State" name="ste"></td>
+            </tr>
+            <tr>
+                <td>Catgory</td>
+                <td> 
+                    <select name="_category">
+                   {{#each mydata}}
+                        
+                            <option value='{{_id}}'>{{country_name}}</option>
+                           
+                           {{/each}}
+                        </select>
+                </td>
+            </tr>
+           
+            <tr>
+                <td><input type="submit"></td>
+                <td><input type="reset"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

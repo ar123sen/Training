@@ -1,0 +1,40 @@
+<style>
+    table {
+    counter-reset: tableCount;     
+}
+.counterCell:before {              
+    content: counter(tableCount); 
+    counter-increment: tableCount; 
+}
+
+</style>
+
+<h1>Display</h1>
+{{subcategory_array.length}} Records Found
+
+<table border='1'>
+    <tr>
+        <th>ID</th>
+            <th>city_name</th>
+     <th>state_name</th>
+            <th>country_name</th>
+        <th>Action</th>
+    </tr>
+
+{{#each subcategory_array}}
+    <tr>
+    <td class="counterCell"></td>
+    <td>{{city_name}}</td>
+    <td>{{_states.state_name}}</td>
+    <td>{{_category.country_name}}</td>
+   
+    <td>
+        <a href="/editsub/{{_id}}">Edit</a> |
+        <a href="/deletesub/{{_id}}" onclick="return confirm('Are you sure?')">Delete</a>
+
+    </td>
+    </tr>
+{{/each}}
+
+
+</table>
